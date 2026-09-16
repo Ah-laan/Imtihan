@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login | Barey Exam Portal</title><link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+<div class="auth-card">
+  <a class="back" href="index.html">← Back</a>
+  <div class="auth-icon">🎓</div>
+  <h1>Student Login</h1>
+  <p>Enter your Student ID and password.</p>
+  <form id="loginForm">
+    <label>Student ID<input id="studentId" required placeholder="e.g. ST001"></label>
+    <label>Password<input id="password" type="password" required placeholder="Password"></label>
+    <div id="loginError" class="alert error hidden"></div>
+    <button class="btn primary full" type="submit">Login</button>
+  </form>
+  <div class="demo-box"><b>Demo account</b><br>Student ID: ST001<br>Password: 1234</div>
+</div>
+<script src="data.js"></script><script src="auth.js"></script>
+</body>
+</html>

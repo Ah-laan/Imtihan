@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take Exam</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar"><div class="brand"><span class="brand-mark">B</span><div><strong>Barey Secondary School</strong><small>Examination Portal</small></div></div><div class="timer" id="timer">00:00</div></header>
+<main class="exam-container">
+  <div class="exam-head"><div><span class="eyebrow" id="subject"></span><h1 id="examTitle"></h1><p id="examMeta"></p></div><div class="progress-box"><span id="progressText">1 / 1</span><div class="progress"><i id="progressBar"></i></div></div></div>
+  <div id="examAlert" class="alert warning hidden"></div>
+  <section class="exam-layout">
+    <aside class="question-nav panel"><h3>Questions</h3><div id="questionNav"></div><div class="legend"><span><i class="dot answered"></i> Answered</span><span><i class="dot current"></i> Current</span><span><i class="dot"></i> Unanswered</span></div></aside>
+    <section class="question-card panel">
+      <div class="question-top"><span id="questionNumber"></span><span id="markBadge" class="badge">1 Mark</span></div>
+      <h2 id="questionText"></h2>
+      <div id="options" class="options"></div>
+      <div class="question-actions"><button class="btn secondary" id="prevBtn">← Previous</button><button class="btn primary" id="nextBtn">Next →</button></div>
+    </section>
+  </section>
+</main>
+<script src="data.js"></script><script src="auth.js"></script><script src="exam.js"></script>
+</body>
+</html>

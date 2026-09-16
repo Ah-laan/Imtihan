@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar"><div class="brand"><span class="brand-mark">B</span><div><strong>Barey Secondary School</strong><small>Exam Portal</small></div></div><button class="link-btn" onclick="logout()">Logout</button></header>
+<main class="container">
+  <section class="result-card panel">
+    <div class="result-icon">✓</div><span class="eyebrow">EXAMINATION RESULT</span><h1 id="examTitle">Result</h1><p id="studentLine"></p>
+    <div class="result-grid">
+      <div><span>Total Questions</span><strong id="total"></strong></div><div><span>Correct</span><strong id="correct"></strong></div><div><span>Wrong</span><strong id="wrong"></strong></div><div><span>Unanswered</span><strong id="unanswered"></strong></div>
+    </div>
+    <div class="big-result"><div><span>Score</span><strong id="score"></strong></div><div><span>Percentage</span><strong id="percentage"></strong></div><div><span>Grade</span><strong id="grade"></strong></div><div><span>Status</span><strong id="status"></strong></div></div>
+    <div class="actions center"><button class="btn secondary" onclick="window.print()">Print Result</button><a class="btn primary" href="student-dashboard.html">Back to Dashboard</a></div>
+  </section>
+  <section class="panel"><div class="panel-head"><h2>Answer Review</h2><span class="muted">Your answers compared with the correct answers</span></div><div id="review"></div></section>
+</main>
+<script src="data.js"></script><script src="auth.js"></script><script src="results.js"></script><script>
+requireStudent(); renderResultPage();
+</script>
+</body>
+</html>

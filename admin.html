@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin & Teacher Panel</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar"><div class="brand"><span class="brand-mark">B</span><div><strong>Barey Secondary School</strong><small>Admin / Teacher Panel</small></div></div><div><button class="link-btn" onclick="adminLogout()">Logout</button><a class="link-btn" href="index.html">Home</a></div></header>
+<main class="container">
+  <section class="page-head"><div><span class="eyebrow">ADMIN / TEACHER</span><h1>Examination Management</h1><p>Manage static MCQ exams and import questions from CSV.</p></div></section>
+  <div class="alert warning">Static GitHub Pages note: this panel is client-side only. It is suitable for demos/basic use, not secure production administration.</div>
+  <section class="stats">
+    <div class="stat"><span>Students</span><strong id="studentCount"></strong></div><div class="stat"><span>Exams</span><strong id="examCount"></strong></div><div class="stat"><span>Saved Results</span><strong id="resultCount"></strong></div><div class="stat"><span>Questions</span><strong id="questionCount"></strong></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Import MCQ Exam</h2><div class="actions"><a class="btn small secondary" href="sample-exam.csv" download>Sample CSV</a><a class="btn small secondary" href="sample-exam-word-format.txt" download>Word Format Guide</a></div></div>
+    <p class="muted">Admin/Teacher only. Supported: CSV and Microsoft Word <b>.DOCX</b>.</p>
+    <div class="import-row"><label class="file-drop">Choose CSV or Word<input type="file" id="examFile" accept=".csv,.docx,text/csv,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label><select id="examSelect"></select><button class="btn primary" onclick="importSelectedFile()">Preview Import</button></div>
+    <div id="importMessage"></div><div id="preview"></div><div id="confirmImportArea" class="hidden"><button class="btn primary" onclick="confirmImport()">Confirm & Import Questions</button></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Exams</h2><button class="btn small primary" onclick="createExam()">+ Create Exam</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Title</th><th>Subject</th><th>Grade</th><th>Questions</th><th>Duration</th><th>Pass Mark</th></tr></thead><tbody id="examRows"></tbody></table></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>All Student Results</h2><div class="actions"><button class="btn small secondary" onclick="exportAllResults()">Export CSV</button><button class="btn small secondary" onclick="window.print()">Print</button></div></div>
+    <div class="table-wrap"><table><thead><tr><th>Candidate Name</th><th>Candidate ID</th><th>Account ID</th><th>Exam</th><th>Score</th><th>%</th><th>Grade</th><th>Status</th><th>Date</th></tr></thead><tbody id="allResultRows"></tbody></table></div>
+  </section>
+</main>
+<script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script><script src="data.js"></script><script src="results.js"></script><script src="admin.js"></script><script>requireAdmin();</script>
+</body>
+</html>

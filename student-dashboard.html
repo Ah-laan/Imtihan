@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar"><div class="brand"><span class="brand-mark">B</span><div><strong>Barey Secondary School</strong><small>Exam Portal</small></div></div><div><span id="welcome"></span><button class="link-btn" onclick="logout()">Logout</button></div></header>
+<main class="container">
+  <section class="page-head"><div><span class="eyebrow">STUDENT DASHBOARD</span><h1 id="studentName">Dashboard</h1><p id="studentInfo"></p></div></section>
+  <section class="stats">
+    <div class="stat"><span>Available Exams</span><strong id="availableCount">0</strong></div>
+    <div class="stat"><span>Completed Exams</span><strong id="completedCount">0</strong></div>
+    <div class="stat"><span>Average Score</span><strong id="averageScore">0%</strong></div>
+    <div class="stat"><span>Latest Result</span><strong id="latestResult">—</strong></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Available Exams</h2><span class="muted">MCQ examinations</span></div>
+    <div id="examList" class="exam-list"></div>
+  </section>
+</main>
+<script src="data.js"></script><script src="auth.js"></script><script src="results.js"></script><script>
+requireStudent();
+const s = getCurrentStudent();
+document.getElementById('studentName').textContent = `Welcome, ${s.name}`;
+document.getElementById('welcome').textContent = s.name;
+document.getElementById('studentInfo').textContent = `${s.id} · ${s.grade} · Section ${s.section}`;
+renderStudentDashboard(s.id);
+</script>
+</body>
+</html>
